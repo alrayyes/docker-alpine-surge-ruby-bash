@@ -1,9 +1,6 @@
 FROM mhart/alpine-node:latest
 MAINTAINER Ryan Kes <ryan@andthensome.nl>
 
-# Install pygments (for syntax highlighting)
-RUN apk update && apk add bash && apk add git && rm -rf /var/cache/apk/*
-
 # Install surge client
 RUN npm install -g surge
 
@@ -25,6 +22,8 @@ ENV RUBYGEMS_VERSION 2.6.7
 RUN set -ex \
 	\
 	&& apk add --no-cache --virtual .ruby-builddeps \
+		bash \
+		git \
 		autoconf \
 		bison \
 		bzip2 \
