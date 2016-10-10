@@ -98,7 +98,7 @@ ENV BUNDLER_VERSION 1.13.2
 RUN gem install bundler --version "$BUNDLER_VERSION"
 
 # Add git & bash for wercker
-RUN apk update && && apk add git && apk add bash && rm -rf /var/cache/apk/*
+RUN apk update && apk add git && apk add bash && rm -rf /var/cache/apk/*
 
 # install things globally, for great justice
 # and don't create ".bundle" in all our apps
